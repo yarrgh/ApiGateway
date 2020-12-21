@@ -17,10 +17,10 @@ namespace ApiGateway
          .ConfigureAppConfiguration((hostingContext, config) =>
          {
            config
-                     .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
-                     .AddJsonFile("appsettings.json", false, true)
-                     .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
-                     .AddEnvironmentVariables();
+             .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+             .AddJsonFile("appsettings.json", false, true)
+             .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
+             .AddEnvironmentVariables();
          })
          .ConfigureServices(s =>
          {
@@ -28,8 +28,8 @@ namespace ApiGateway
          })
          .ConfigureLogging((hostingContext, logging) =>
          {
-                 //add your logging
-               })
+           //add your logging
+         })
          .Configure(app =>
          {
            app.UseOcelot();
